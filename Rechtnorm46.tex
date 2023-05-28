@@ -1,0 +1,206 @@
+\documentclass[10pt,parskip]{scrbook}
+
+\usepackage[ngerman]{babel}
+
+\usepackage[backend=biber,style=alphabetic,urldate=iso,date=iso, seconds=true]{biblatex}
+\addbibresource{StrafanzeigeBundesgericht.bib}
+\addbibresource{Gesetze.bib}
+
+
+\usepackage{nameref}
+
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{refcount}
+
+\usepackage{pdfpages}
+\usepackage{ifthen}
+\usepackage{float}
+
+\usepackage{xcolor}
+
+% fuer Stichwortverzeichnis
+% Stichwortverzeichnis erstellen
+\usepackage{makeidx}
+\makeindex
+
+\renewcommand{\indexname}{Stichwortverzeichnis}
+
+
+\usepackage{geometry}
+\geometry{a4paper, right=2cm, left=2cm,top=3cm,bottom=3cm}
+%\setlength{\parindent}{0em}
+
+
+
+
+\newcounter{rz}
+\newcommand{\Rz}{\addtocounter{rz}{1}\marginpar{\texttt{\textit{A\arabic{rz}}}}}
+\newcommand{\RzLabel}[1]{\refstepcounter{rz}\label{#1}\marginpar{\texttt{\textit{A\arabic{rz}}}}}
+
+
+
+
+\newcounter{AnlageNr}
+\newcommand{\addAnhang}[2]{
+	\refstepcounter{AnlageNr}
+	\label{#1}
+	\lhead{Anlage \theAnlageNr: \cite{#1} -- \citefield{#1}{title}}
+	\includepdf[pages=1-, pagecommand={}, scale=0.75, frame=true]{#2}
+}
+
+\newcommand{\sieheAnhang}[1]{(siehe Anhang Nr. \ref{#1})} 
+
+\newif\ifFooterInfo
+\FooterInfotrue
+\newcommand{\GNorm}[3]{#1 #2\ifFooterInfo\footnote{A\therz -- Verweis auf \ifstrempty{#3}{\citefield{#1#2}{title}}{\citefield{#1#3}{title}}}}
+
+\newif\ifGesetzInfo
+\GesetzInfotrue
+
+
+
+% Title Page
+\title{Die spezielle Förderung an Privatschulen}
+\subtitle{des Kantons Basel-Landschaft}
+\author{Jens Fischer}
+\date{\today}
+
+
+
+
+\begin{document}
+\maketitle
+
+
+%\pagestyle{fancy}
+\tableofcontents
+
+\chapter{Einleitung}\label{chap:Einleitung}
+Es \Rz hat mich als betroffener Vater als Informatiker ohne einschlägige juristische Ausbildung fast 2 Jahre gekostet, das in dieser Abhandlung präsentierte juristische Wissen zu durchdringen und in dieser Form zusammenzutragen. Die Betroffenheit ergibt sich aus dem Umstand, dass meinen Sohn in der Schule so heftiges Mobbing erfahren hat, dass dieser im September 2019 einen ersten heftigen Nervenzusammenbruch in Form eines kaum zu beruhigen Heulkrampf bekam. Nachdem auch danach die Schule keine Besserung im Klassenverhalten erreichen konnte, hat sich unser Sohn dann während des Unterrichts so sehr selbst gewürgt, dass dies als versuchter Selbstmord gewertet wurde. Auf einem Fachkonvent wurde uns daher auf Basis eines von uns entsprechenden eingereichten Antrags die Bewilligung einer "`\textsl{Speziellen Förderung an Privatschulen}"' bis Ende der obligatorischen Schulzeit mündlich zugesagt. Wir Eltern haben diesen Antrag gestellt weil uns von verschiedenen Behörden mitgeteilt wurde, dass eine Bewilligung auf Basis der Beantragung durch die Eltern plus einer entsprechenden Empfehlung seitens des kantonalen Schulpsychologischen Diensts erfolgen kann. Wir haben diesen rechtlichen Aussage der Behörden uneingeschränkt vertraut und daher auch nicht geprüft. \\   
+Was diese Zusage wert ist, haben wir etwas 3 Monate später erfahren müssen, denn wir einen Rechtsanwalt beauftragen, damit die Zusage eingehalten wird. In dieser Zeit wurde mir erstmals deutlich, dass die Zusage bereits aus rechtlicher Sicht fragwürdig war, denn gemäss des § 46 des kantonalen Bildungsgesetzes reicht ein Antrag der Eltern nicht aus, dass die "`\textsl{Speziellen Förderung an Privatschulen}"' bewilligt werden darf. Wie bereits eingangs erwähnt, hat es mich etwa 2 Jahre gekostet, dass in dieser Abhandlung zusammengefasste Wissen zu erlangen. Diese Abhandlung soll anderen Rechtslaien helfen, dieses rechtliche Wissen in kürzerer Zeit zu erlangen.\\
+
+
+
+Bereits in \Rz der ersten in Gesetzeskraft getretene Fassung des kantonalen Bildungsgesetz (siehe \GNorm{SGS}{640}{}) hat der kantonale Gesetzgeber vom Kanton Basel-Landschaft mit dem Schuljahr 2003/04 die Möglichkeit der "`\textsl{Speziellen Förderung an Privatschulen}"' im § 46 vorgesehen. Die initiale Fassung vom § 46 war wie folgt formuliert:
+
+\begin{itemize}[noitemsep]\setlength\itemsep{0.3em}
+	\item[] \textit{§ 46 -- Spezielle Förderung an Privatschulen}
+	\item[] \textsuperscript{1}	Die Bildungs-, Kultur- und Sportdirektion kann ein Angebot der Speziellen Förderung einer Privatschule übertragen. Vorrang haben Massnahmen der Speziellen Förderung innerhalb der öffentlichen Schulen des Kantons und der Einwohnergemeinden.
+	\item[] \textsuperscript{2}	Die Bewilligung zur Aufnahme einer Speziellen Förderung an einer Privatschule erteilt die Bildungs-, Kultur- und Sportdirektion auf Antrag einer vom Kanton bestimmten Fachstelle.
+	\item[] \textsuperscript{3}	Vorgängig der Erteilung einer Bewilligung zugunsten einer Schülerin oder eines Schülers des Kindergartens oder der Primarschule nimmt die Bildungs-, Kultur- und Sportdirektion Rück-sprache mit dem zuständigen Schulrat.
+\end{itemize} 
+
+Schaut \Rz man sich die Änderungshistorie des Bildungsgesetzes an, dann könnte man annehmen, dass erstmals mit dem Schuljahr 2021/22 eine Änderung bzgl. der `\textsl{Speziellen Förderung an Privatschulen}"' erfolgte, den seit dem lautet der § 46 wie folgt:
+
+\begin{itemize}[noitemsep]\setlength\itemsep{0.3em}
+	\item[] \textit{§ 46 -- Spezielle Förderung an Privatschulen und in Spezialangeboten}
+	\item[] \textsuperscript{1}	Die Bildungs-, Kultur- und Sportdirektion kann ein Angebot der Speziellen Förderung einer Privatschule oder weiteren Leistungserbringenden im Bildungsbereich übertragen. Vorrang haben Massnahmen der Speziellen Förderung innerhalb der öffentlichen Schulen des Kantons und der Einwohnergemeinden. 
+	\item[] \textsuperscript{2}	Die Bewilligung zur Aufnahme einer Speziellen Förderung an einer Privatschule oder bei einem weiteren Leistungserbringenden im Bildungsbereich erteilt die Bildungs-, Kultur- und Sportdirektion auf Antrag einer vom Kanton bestimmten Fachstelle.
+	\item[] \textsuperscript{3}	Vorgängig der Erteilung einer Bewilligung zugunsten einer Schülerin oder eines Schülers des Kindergartens oder der Primarschule nimmt die Bildungs-, Kultur- und Sportdirektion Rücksprache mit dem zuständigen Schulrat.
+	\item[] \textsuperscript{4}	Zur Förderung von besonders sportbegabten Jugendlichen können Sportklassen geführt werden.
+	\item[] \textsuperscript{5}	Das Angebot und die Aufnahmebedingungen regelt die Verordnung. 
+\end{itemize} 
+
+Doch \Rz weit gefehlt, denn mit dem Schuljahr  2020/21, also ein Jahr zuvor, wurde mittels einer Änderung an anderer Stelle vom Bildungsgesetz, die "`\textsl{Speziellen Förderung an Privatschulen}"' an der Sekundarstufe II aufgehoben. Im Bildungsgesetz wird im § 6 das Bildungsangebot vom Kanton bestimmt. Mit dem Schuljahr 2020/21 wurde dieses über eine scheinbar unbedeutende Änderung im § 6 Abs. 1 lit. g des Bildungsgesetzes reduziert, den initial lautet dieser "`\textsl{die Spezielle Förderung bis zur Beendigung der Sekundarstufe II}"'. Nach der Anpassung galt dann die folgende Regelung "`\textsl{die Spezielle Förderung bis zur Beendigung der Sekundarstufe II}"', es wurde somit die Sekundarstufe II von der "`\textsl{Speziellen Förderung an Privatschulen}"' nachträglich ausgeschlossen.\\ 
+
+Auch \Rz an einer anderen Stelle wird deutlich, dass der § 46 des Bildungsgesetzes nicht für sich allein betrachtet werden kann, denn bereits an der Bedingung "`\textit{Die Bewilligung zur Aufnahme einer Speziellen Förderung an einer Privatschule erteilt die Bildungs-, Kultur- und Sportdirektion auf Antrag einer vom Kanton bestimmten Fachstelle.}"' wird bei genauer Betrachtung deutlich, dass im Bildungsgesetz nicht ausgeführt wird, ob es eine oder verschiedene Fachstelle gibt, die einen Antrag bzgl. einer Bewilligung zur Aufnahme einer "`\textsl{Speziellen Förderung an Privatschulen}"' bei der die Bildungs-, Kultur- und Sportdirektion stellen dürfen. An der Stelle sei bereits der Hinweis gestattet, diese Information befindet sich in der "`\textsl{ Verordnung über die Spezielle Förderung, die Sonderschulung und die heilpädagogische Früherziehung}"' \GNorm{SGS}{640.71}{64071}. Diese Verordnung wurde jedoch nicht vom Landrat, sondern vom Regierungsrat erlassen.\\
+
+Bereits \Rz zu Beginn des Bildungsgesetzes wird noch eines indirekt deutlich, das das Bildungsgesetz eine direkte Abhängigkeit zur Kantonsverfassung hat, denn zu Beginn des Gesetzes wird ausgeführt: "`\textsl{Der Landrat des Kantons Basel-Landschaft beschliesst:}"' und dieser Satz ist mit einer Fusszeile versehen, in der zusätzlich festgehalten wird: "`\textsl{In der Volksabstimmung vom 22. September 2002 angenommen}"'.\\
+
+
+Ich \Rz muss jedoch darauf hinweisen, dass die Abhandlung keine Rechtsberatung ersetzen kann, da jede Bewilligung einer "`\textsl{Speziellen Förderung an Privatschulen}"' immer in Form einer Entscheidung im Einzelfall daher kommt. Es sollte somit deutlich sein, dass eine allgemeine Abhandlung nie die Komplexität eines Einzelfalls abbilden kann. Diese Abhandlung kann jedoch ein Hilfsmittel darstellen, um im Einzelfall mögliche Fragen bzgl. einer Bewilligung der "`\textsl{Speziellen Förderung an Privatschulen}"' im Vorfeld erkennen zu können.
+
+\chapter{Die Randbedingungen des Bildungsgesetz}
+Wie \Rz bereits im Kapitel ~\ref{chap:Intensiom} (\nameref{chap:Intensiom}) aufgezeigt, gibt es diverse rechtliche Randbedingungen. Da gibt es einmal Gesetzes die den äusseren Rahmen vorgegeben. Zusätzlich gibt es bzgl. des Bildungsgesetzes zusätzliche Verordnungen, damit dieses um weitere Details zu ergänzen. Um die rechtlichen Unterschiede zwischen Gesetze und Verordnungen zu verstehen kann die Kantonsverfassung \GNorm{SGS}{100}{} zur Hilfe genommen werden. 
+
+\section{Die Kantonsverfassung}\label{chap:Kantonsverfassung}
+Die \Rz Kantonsverfassung beinhaltet die am allgemeinsten formulierten kantonale Bestimmungen, die jedoch nicht gegen eidgenössisches Recht verstossen dürfen. Diese Einschränkung steht übrigens auch in der kantonalen Verfassung im § 20, denn darin wird festgelegt "`\textsl{Jeder hat die Pflichten zu erfüllen, die ihm die Rechtsordnung des Bundes, des Kantons und der Gemeinde auferlegt}"'.\\
+
+\subsection{Das Gesetzgebungsverfahren}\label{chap:Gesetzgebungsverfahren}
+Aufgrund \Rz § 61 der Kantonsverfassung ist der Landrat die gesetzgebende Behörde des Kantons. Daher hat man mit dem § 63 der Kantonsverfassung den Landrat legitimiert alle grundlegenden und wichtigen Bestimmungen in der Form des Gesetzes zu erlassen. Ausgenommen davon ist übrigens ausdrücklich die Kantonsverfassung. Beim Erlass von Verordnungen kommt jedoch § 74 der Kantonsverfassung zum Zuge. Darin wird dem Regierungsrat die Aufgabe übertragen im Regelfall Verordnungen auf der Grundlage und im Rahmen der Gesetze und Staatsverträge zu erlassen. In diesem Kontext ist auch der § 4 der Kantonsverfassung von enormer Wichtigkeit, denn danach sind alle Behörden an Verfassung und Gesetz gebunden. Ihr Handeln muss im öffentlichen Interesse liegen und verhältnismässig sein. Da eine Behörde ein abstraktes Gebilde ist, dass erst durch Personen zum Leben erwacht, hat die Kantonsverfassung für diese Personengruppe ebenfalls verbindliche Regeln festgelegt. So müssen diese Personen gemäss § 59 bei Amtsantritt die Beachtung von Verfassung und Gesetz geloben.\\ 
+
+\subsection{Das Gesetzgebungskontrolle}
+Auch wenn \Rz es in der Einleitung zum Kapitel ~\ref{chap:Kantonsverfassung} (\nameref{chap:Kantonsverfassung}) sowie dem dem darin enthaltenen Unterkapitel ~\ref{chap:Gesetzgebungsverfahren} (\nameref{chap:Gesetzgebungsverfahren}) bereits angedeutet wurde, ist es für die gesamte Abhandlung wichtig im Hinterkopf zu haben, dass gegen Gesetze verstossen werden kann. Das trifft auch auf das Gesetzgebungsverfahren zu. So könnte der Landrat u.U. ungewollt mit Gesetzesänderungen gegen Bundesbestimmungen oder anderweitige kantonale Gesetze verstossen. Es sollte damit auch deutlich sein, dass dies ebenfalls dem Regierungsrat passieren kann, wenn er Verordnungen erlässt.\\
+
+Der kantonale Gesetzgeber hat daher zwei Gesetzgebungskontrollen eingeführt. Die erste Kontrolle geschieht dadurch, dass alle beim Landrat zu beratenen Entwürfe von Gesetzesänderungen zeitnah veröffentlicht werden müssen. Bereits in dieser Phase aufgrund § 34 der Kantonsverfassung kann jeder auf mögliche Gesetzesverstösse hinweisen. Nachdem die Gesetzesänderung vom Landrat beschlossen wurde, können gegen diese 10 Tage von aktuell oder zukünftig Betroffenen entsprechende Beschwerden aufgrund des \GNorm{SGS}{175}{} eingereicht werden. Gleiches gilt übrigens auch bei Verordnungen des Regierungsrates. Aber auch wenn diese Möglichkeiten nicht ausgeschöpft wurden, gibt es noch eine Gesetzgebungskontrolle. Diese wird vom Kantonsgericht ausgeübt. 
+
+\chapter{sonstiges}
+
+Aufgrund \Rz des § 46 Abs. 1 SGS 640 ergibt sich, dass drei Akteure bzgl. des Angebots der speziellen Förderung einer Privatschule beteiligt sind. Das ist einmal der Kanton in Form der BKSD, dann eine Privatschule, die für den Kanton eine Dienstleistung erbringen soll und der betroffene Schüler (bzw. dessen Eltern). Mit dem § 46 Abs. 2 kommt als weiterer Akteur die vom Kanton bestimmte Fachstelle hinzu. Diese hat als einziger Akteur das Recht die Umsetzung des Angebots an einer Privatschule bei der BKSD zu beantragen. Eine kleine Randnotiz zum besseren Verständnis des nachfolgenden Hinweises, der Zeitraum des Kindergartens plus dem der Primarschule wird gemäss Bildungsgesetz zusammengefasst als Primarstufe bezeichnet. Sollte das Kind die Primarstufe besuchen, kommt zusätzlich der Schulrat der zuständigen Primarschule als weiterer Akteur hinzu. Bereits hier zeigt sich eine Besonderheit, denn auch auf Stufe der Sekundarschule gibt es einen Schulrat, mit diesem nimmt die Bildungs-, Kultur- und Sportdirektion jedoch keine Rücksprache. Ein weiterer Akteur, ohne den die "`\textsl{Speziellen Förderung an Privatschulen}"' gar nicht stattfinden könnte, wird nur am Rande im § 46 genannt, die Privatschule, die für den Kanton die "`\textsl{Speziellen Förderung an Privatschulen}"' durchführen soll.
+
+Es \Rz kann also an der Stelle festgehalten werden, dass es folgende Akteure bzgl. der "`\textsl{Speziellen Förderung an Privatschulen}"' gibt:
+\begin{itemize}[noitemsep]\setlength\itemsep{0.3em}
+	\item denn Kanton in Form der Bildungs-, Kultur- und Sportdirektion,
+	\item den Schüler bzw. dessen gesetzliche Vertreter,
+	\item die vom Kanton bestimmte Fachstelle
+	\item den Schulrat, sofern der Schüler sich in der Primarstufe befindet
+	\item die ausführende Privatschule
+\end{itemize} 
+
+
+
+\chapter{Die beteiligten Akteure}
+
+\section{Die vom Kanton beauftragte Fachstelle}
+Wie bereits in 
+
+\section{Die Bildungs-, Kultur- und Sportdirektion}
+
+\section{Der Schüler bzw. dessen gesetzliche Vertreter}
+
+
+
+\section{Der Schulrat in Bezug auf die Primarstufe}
+
+\section{Die Privatschule}
+
+Gemäss \RzLabel{DefPS} § 3 Abs. 5 SGS 640\footcite{SGS640} sind Privatschulen Schulen, die privatrechtlich getragen werden und gleichwertige Bildung wie an der öffentlichen Volksschule anbieten. Die im Begehren vom 03. Mai 2021 genannte Schule (BZB), ist gemäss der Definition aus § 3 Abs. 5 SGS 640 eine Privatschule. Aus der Rechtsnorm, die sich aus § 6  Abs. 1 SGS 640.43 (siehe \cite{SGS64043}) ergibt, wird deutlich, dass die Privatschule für die zu erbringende Dienstleitung vom Kanton eine finanzielle Entschädigung erhält, denn die Privatschule verpflichtet sich, zur Mehrheit Lehrpersonen anzustellen, die über eine fachliche und pädagogische Ausbildung für die entsprechende Schulstufe und ein von der Eidgenössischen Erziehungsdirektorenkonferenz anerkanntes und gleichwertiges Diplom verfügen.
+
+Aus \Rz dem Abschnitt R\ref{DefPS} wird auch deutlich, dass mit § 46 Abs. 1 SGS 640 der Privatschule ein Recht unter Berücksichtigung von Auflagen zugesprochen wird. Es wird der Privatschule das Recht zu gesprochen, für den Kanton eine spezielle Förderung im Einzelfall durchführen zu dürfen. 
+
+Gemäss \RzLabel{AufgBKSD} § 46 Abs. 2 SGS 640 (siehe \cite{SGS640}) wird nur der BKSD das Recht zuerkannt, einer Privatschule das Recht für den Kanton eine spezielle Förderung im Einzelfall durchführen zu dürfen, erteilen zu dürfen. Dieses Recht steht der BKSD jedoch nur unter der verbindlichen Auflage zu, dass der BKSD eine entsprechende Beantragung durch eine vom Kanton bestimmte Fachstelle, namentlich vom Schulpsychologischen Dienst, vorliegt. Zusätzlich wird das Recht der BKSD aufgrund der zweiten Bedingungen, die sich aus zweiten Satz des § 46 Abs. 1 SGS 640 ergibt, eingeschränkt. Somit muss vom BKSD vor der Rechtserteilung an die Privatschule geprüft werden, ob die notwendige speziellen Förderung über Massnahmen innerhalb der öffentlichen Schulen des Kantons und der Einwohnergemeinden möglich sind. Dabei ist jedoch der § 5a Abs. 1 SGS 640 in die Erwägungen einzubeziehen, denn danach gilt (Zitat):
+\begin{addmargin}[2.5em]{0em}Die Schülerinnen und Schüler mit besonderem Bildungsbedarf werden vorzugsweise integrativ geschult, unter Beachtung des Wohles und der Entwicklungsmöglichkeiten des Kindes oder des Jugendlichen sowie unter Berücksichtigung des schulischen Umfeldes und der Schulorganisation.
+\end{addmargin}
+
+Aus \RzLabel{RechtSus}dem Abschnitt R\ref{AufgBKSD} wird deutliche, welche  Rolle der Schüler bzgl. speziellen Förderung an Privatschule zukommt. Wenn dieser einen besonderen Bildungsbedarf hat, so steht ihm eine entsprechende (spezielle) Förderung zu, die vorzugsweise integrativ durchgeführt wird. Sollte dies aufgrund seines Wohles und seiner Entwicklungsmöglichkeiten sowie unter Berücksichtigung des schulischen Umfeldes und der Schulorganisation nicht integrativ möglich sein, so hat ihm die (spezielle) Förderung über Rechtsnorm des § 46 SGS 640 ermöglicht zu werden. Womit wieder die Ausführungen aus dem Abschnitt R\ref{AufgBKSD} zum Tragen kommen.
+
+Der \RzLabel{AufgSPD} Abschnitt A\ref{RechtSus} offenbart eine weitere Aufgabe des Schulpsychologischen Dienstes (SPD). Dieser hat für den Schüler sowie der BKSD u.a. abzuklären, ob der Schüler einen besonderen Bildungsbedarf hat und wie dieser Bedarf unter Berücksichtigung des § 5a Abs. 1 SGS 640 integrativ, namentlich an der öffentlichen Schule, erfüllt werden kann. Sollte ein besonderer Bildungsbedarf festgestellt worden sein, und dieser nicht durch die öffentliche Schule erfüllt werden können, so hat der SPD zusätzlich abzuklären, ob der besondere Bildungsbedarf über eine Privatschule abgedeckt werden kann. Alle Abklärungen vom SPD bzgl. eines möglicherweise besonderen Bildungsbedarfs führen dann zu einer Indikation (Empfehlung). Somit sollte klar sein,  dass die Abklärung durch die Fachstelle und deren Befund, namentlich der Indikation, nicht \textit{direkt} auf Rechtswirkungen, sondern auf die Herbeiführung eines Taterfolges ausgerichtet sind. Der Taterfolg der Abklärung durch die Fachstelle und deren Befund besteht darin, dass allen Beteiligten ein besonderer Bildungsbedarf des Schülers und wie dieser Bedarf erfüllt werden kann bekannt gegeben wird.
+
+Im \Rz Kontext des § 46 SGS 640 kommt zusätzlich das Verwaltungsverfahrensgesetz (VwVG/BL) (siehe \cite{SGS175}) ins Spiel, denn es ordnet das Verfahren für den Erlass, die Änderung oder die Aufhebung von Verfügungen durch Verwaltungsbehörden (siehe § 1 Abs. 1 VwVG/BL). Gemäss § 2 Abs. 1 lit. a VwVG/BL  gelten Verfügung als Anordnungen der Behörden im Einzelfall, die sich auf öffentliches Recht stützen und u.a. die Begründung, Änderung oder Aufhebung von Rechten oder Pflichten zum Gegenstand haben. Aus § 25 Abs. 1 VwVG/BL folgt, dass die Behörde das Verfahren auf Erlass einer Verfügung auf Begehren oder von Amtes wegen durchführt. Wie das Kantonsgericht zu Beginn der Erwägung selber aufzeigt, sind die Abklärung durch die Fachstelle, deren Befund und deren Antrag an das AVS jeweils in sich abgeschlossene Handlungen.
+
+Hinsichtlich \RzLabel{AufgIndikation} des Antrags der Fachstelle an das AVS kommt dem § 15 VwVG/BL eine entscheidende Bedeutung zu, denn danach gilt (Zitat):
+\begin{addmargin}[2.5em]{0em}Eingaben der Parteien mit rechtlichen Begehren sind schriftlich einzureichen und müssen ein klar umschriebenes Begehren, die Angabe der Tatsachen und Beweismittel, eine Begründung sowie die Unterschrift der Parteien oder ihres Vertreters enthalten.
+\end{addmargin}
+Jetzt wird auch die rechtliche Funktion einer Indikation deutlich. Sie erfüllt den obligatorischen zu erfüllenden Bestandteil bzgl. der zu erbringen Angabe der Tatsachen und Beweismittel des rechtlichen Begehrens. 
+
+Es \RzLabel{RW} kann somit festgehalten werden, wenn die vom Kanton bestimmte Fachstelle beim AVS das rechtliche Begehren auf Bewilligung der speziellen Förderung an Privatschulen einreicht, dann ist u.a. damit Ziel verbunden, dass einer Privatschule, namentlich in meinem Fall dem BZB, das Recht zugesprochen wird, für den Kanton eine spezielle Förderung im Einzelfall durchführen zu dürfen. Im Weiteren wird mit dem rechtlichen Begehren beantragt, dass der Schüler seinen besonderen Bildungsbedarf an einer Privatschule erfüllt bekommen darf ohne die daraus entstehenden Kosten tragen zu müssen. 
+
+
+Aus \Rz den vorhergehenden Ausführungen ergibt sich die Rechtsnorm, dass die BKSD, namentlich deren Abteilung Sonderpädagogik, die Bewilligung einer speziellen Förderung an einer Privatschule ausschliesslich auf Basis eines rechtlichen Begehrens einer vom Kanton bestimmten Fachstelle, namentlich vom SPD, erteilen darf. Somit darf die Bewilligungsabteilung innerhalb der BKSD, namentlich die Abteilung Sonderpädagogik, erst bei einer entsprechenden Antragsstellung durch die vom Kanton bestimmten Fachstelle eine positive Verfügung ausstellen.\\ 
+
+\chapter{Anhang}
+Auf dieser Seite sei nochmals was gesagt zu System\index{System} und
+Systemelement\index{System!Element} sowie zu
+Transformationsprozess.\index{Transformationsprozess}
+
+% Index soll Stichwortverzeichnis heissen
+\newpage
+
+% Stichwortverzeichnis soll im Inhaltsverzeichnis auftauchen
+\addcontentsline{toc}{section}{Stichwortverzeichnis}
+
+% Stichwortverzeichnis endgueltig anzeigen
+\printindex
+
+
+
+\addcontentsline{toc}{section}{Auflistung angewandter Gesetzesnormen}
+\printbibliography[heading=none,keyword=Gesetzestext]
+
+
+
+\end{document}          
